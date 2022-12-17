@@ -1,0 +1,32 @@
+{
+  "name": "editorjs-to-html",
+  "version": "1.0.0",
+  "description": "parse editorjs content format to html with saving editorjs layouts",
+  "main": "./build/Parser.node.js",
+  "module": "./build/Parser.esm.js",
+  "directories": {
+    "test": "test",
+    "rollup": ""
+  },
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "keywords": [
+    "editorjs",
+    "parser",
+    "html"
+  ],
+  "author": "Pavel Novaikin",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-terser": "^0.2.0",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "rollup": "^2.79.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
+  }
+}
