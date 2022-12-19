@@ -1,16 +1,9 @@
-import { Props } from './interfaces';
+import {ListBlock, ListItem, Props} from './interfaces';
 import { baseBlock } from './utils';
 
-interface ListItem {
-  content: string;
-  items: ListItem[];
-}
-interface Data {
-  style: 'ordered' | 'unordered';
-  items: ListItem[];
-}
 
-export function nestedList ({ data }: Props<Data>) {
+
+export function nestedList ({ data }: Props<ListBlock>) {
   const listStyle = data.style === 'unordered' ? 'ul' : 'ol';
 
   const recursor = (items: ListItem[], listStyle: 'ul' | 'ol') => {

@@ -11,6 +11,10 @@
   "scripts": {
     "build": "rollup --config"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vorjyga/editorjs-to-html.git"
+  },
   "keywords": [
     "editorjs",
     "parser",

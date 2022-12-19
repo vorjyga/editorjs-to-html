@@ -1,12 +1,9 @@
-import { Props } from './interfaces';
+import {Props, TableBlock} from './interfaces';
 import { baseBlock } from './utils';
 
-interface Data {
-  withHeadings: boolean;
-  content: Array<Array<string>>;
-}
 
-export function table ({ data }: Props<Data>) {
+
+export function table ({ data }: Props<TableBlock>) {
   const item = `<div class="cdx-block tc-wrap tc-wrap--readonly">
             <div class="tc-table">
               ${data.content.map((row) => 
