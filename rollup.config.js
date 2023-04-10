@@ -1,8 +1,9 @@
-import babel from "@rollup/plugin-babel";
-import terser from '@rollup/plugin-terser';
-import typescript from '@rollup/plugin-typescript';
+const babel = require("@rollup/plugin-babel")
+const terser = require("@rollup/plugin-terser");
+const typescript = require("@rollup/plugin-typescript");
+const pcss = require("rollup-plugin-postcss");
 
-export default {
+module.exports = {
     input: "./src/app.ts",
     output: [{
             file: "./build/Parser.node.js",
@@ -20,5 +21,21 @@ export default {
             name: "edjsParser",
         },
     ],
-    plugins: [babel(), terser(), typescript()],
+    plugins: [
+        pcss({
+            plugins: [
+                require('postcss-import'),
+                require('postcss-mixins'),
+                require('autoprefixer'),
+                require('cssnano'),
+                require('postcss-nested'),
+                require('postcss-nesting'),
+                require('postcss-simple-vars'),
+                require('postcss-custom-media'),
+            ]
+        }),
+        typescript(),
+        babel(),
+        terser(),
+    ],
 };

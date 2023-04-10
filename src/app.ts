@@ -1,10 +1,22 @@
 import {transformBlocks} from "./modules";
-import {Props} from "./modules/interfaces";
+import { OutputBlockData } from "./modules/interfaces"
 
-interface OutputData {
-    blocks: Props<any>[]
+export interface OutputData {
+    /**
+     * Editor's version
+     */
+    version?: string;
+
+    /**
+     * Timestamp of saving in milliseconds
+     */
+    time?: number;
+
+    /**
+     * Saved Blocks
+     */
+    blocks: OutputBlockData[];
 }
-
 
 const parser = (plugins = {}) => {
     const parsers = Object.assign({}, transformBlocks, plugins);
@@ -12,11 +24,19 @@ const parser = (plugins = {}) => {
     return {
         parse: ({ blocks }: OutputData) => {
             return blocks.map(block => {
+                if (!parsers[block.type]) {
+                    debugger;
+                }
                 return parsers[block.type]
                     ? parsers[block.type](block)
                     : 'Sorry, not realized yet';
-            })
-        }
+            }).join('')
+        },
+        parseOne: (block) => {
+            return parsers[block.type]
+                ? parsers[block.type](block)
+                : 'Sorry, not realized yet';
+        },
     }
 }
 

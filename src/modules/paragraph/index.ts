@@ -1,7 +1,6 @@
-import {AlignmentType, ParagraphBlock, Props} from './interfaces';
-import { baseBlock } from './utils';
-
-
+import {ParagraphBlock, Props} from '../interfaces';
+import { baseBlock } from '../utils';
+import './index.css';
 
 export function paragraph ({ data }: Props<ParagraphBlock>) {
   const paragraphAlign = data.alignment || data.align || 'inherit';

@@ -1,7 +1,6 @@
-import {ListBlock, ListItem, Props} from './interfaces';
-import { baseBlock } from './utils';
-
-
+import {ListBlock, ListItem, Props} from '../interfaces';
+import { baseBlock } from '../utils';
+import './index.pcss';
 
 export function nestedList ({ data }: Props<ListBlock>) {
   const listStyle = data.style === 'unordered' ? 'ul' : 'ol';
