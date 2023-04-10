@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "parse editorjs content format to html with saving editorjs markup format",
   "main": "./build/Parser.esm.js",
+  "types": "./build/index.d.ts",
   "directories": {
     "test": "test",
     "rollup": ""
