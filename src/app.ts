@@ -18,26 +18,26 @@ export interface OutputData {
     blocks: OutputBlockData[];
 }
 
-const parse = ({ blocks }: OutputData, plugins = {}) => {
+const parser = (plugins = {}) => {
     const parsers = Object.assign({}, transformBlocks, plugins);
-    return blocks.map(block => {
-        if (!parsers[block.type]) {
-            debugger;
-        }
-        return parsers[block.type]
-            ? parsers[block.type](block)
-            : 'Sorry, not realized yet';
-    }).join('')
-};
 
-const parseOne = (block: OutputBlockData, plugins = {}) => {
-    const parsers = Object.assign({}, transformBlocks, plugins);
-    return parsers[block.type]
-        ? parsers[block.type](block)
-        : 'Sorry, not realized yet';
-};
-
-export {
-    parse,
-    parseOne,
+    return {
+        parse: ({ blocks }: OutputData) => {
+            return blocks.map(block => {
+                if (!parsers[block.type]) {
+                    debugger;
+                }
+                return parsers[block.type]
+                    ? parsers[block.type](block)
+                    : 'Sorry, not realized yet';
+            }).join('')
+        },
+        parseOne: (block) => {
+            return parsers[block.type]
+                ? parsers[block.type](block)
+                : 'Sorry, not realized yet';
+        },
+    }
 }
+
+export default parser;

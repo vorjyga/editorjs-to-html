@@ -36,6 +36,6 @@ module.exports = {
         }),
         typescript(),
         babel(),
-        terser(),
+        // terser(),
     ],
 };
