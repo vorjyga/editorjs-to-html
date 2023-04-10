@@ -1,6 +1,6 @@
 {
   "name": "editorjs-to-html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "parse editorjs content format to html with saving editorjs markup format",
   "main": "./build/Parser.esm.js",
   "directories": {
