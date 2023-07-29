@@ -11,7 +11,7 @@ export function nestedList ({ data }: Props<ListBlock>) {
         return `<li>HELLO${item}</li>`;
       }
       let list = '';
-      if (item.items) {
+      if (item.items && item.items.length) {
         list = recursor(item.items, listStyle);
       }
       return `<li class="cdx-nested-list__item">
