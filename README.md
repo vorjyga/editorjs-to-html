@@ -10,7 +10,7 @@ run
 # Usage
 
 ```
-import edjsParser from 'editorjs-to-html';
+import edjsHTML from 'editorjs-to-html';
 
 const edjsParser = edjsHTML();
 
