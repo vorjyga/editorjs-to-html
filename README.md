@@ -5,7 +5,7 @@ Supports basic editorjs blocks which are customizable as well. Extendable.
 # Installation
 
 run 
-`npm install editorjs-html`
+`npm install editorjs-to-html`
 
 # Usage
 
