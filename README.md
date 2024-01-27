@@ -5,12 +5,12 @@ Supports basic editorjs blocks which are customizable as well. Extendable.
 # Installation
 
 run 
-`npm install editorjs-html`
+`npm install editorjs-to-html`
 
 # Usage
 
 ```
-import edjsParser from 'editorjs-to-html';
+import edjsHTML from 'editorjs-to-html';
 
 const edjsParser = edjsHTML();
 
